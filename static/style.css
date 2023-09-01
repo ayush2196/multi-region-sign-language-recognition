@@ -1,0 +1,87 @@
+body {
+    background-color: white;
+    background-image: url('img/SpeakSign.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    font-family: "Gilroy", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    display: flex; /* Set body to flex container */
+    align-items: center; /* Vertically center child elements */
+    justify-content: center; /* Horizontally center child elements */
+    min-height: 100vh; /* Set minimum height to viewport height */
+    margin: 0; /* Remove default margin */
+  }
+
+.center-container {
+    display: flex; /* Set the centered container to flex container */
+    justify-content: center; /* Horizontally center its contents */
+    align-items: center; /* Vertically center its contents */
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.player
+{
+    width: 25rem;
+    height: 30rem;
+    border: 3px solid black;
+    border-radius:10px;
+}
+.englishInput
+{
+    padding:10px;
+}
+.test_word_list
+{
+    height: 30rem;
+}
+.anim
+{
+    width: 100%;
+    height: 100%;
+}
+.word
+{
+    cursor: pointer;
+}
+
+body {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+.split-screen {
+display: flex;
+}
+
+.left-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.right-column {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.left-column1 {
+    border: 2px solid #ccc; /* Specify the border style, width, and color */
+    padding: 20px;
+}
+
+.right-column1 {
+    border: 2px solid #ccc; /* Specify the border style, width, and color */
+    padding: 20px;
+}
