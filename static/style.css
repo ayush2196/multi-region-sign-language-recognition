@@ -85,3 +85,20 @@ display: flex;
     border: 2px solid #ccc; /* Specify the border style, width, and color */
     padding: 20px;
 }
+
+.right-col-text {
+    float: right;
+}
+
+.left-col-text {
+    float: left;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+}
