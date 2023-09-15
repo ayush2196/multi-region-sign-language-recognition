@@ -2,6 +2,7 @@
 from flask import Flask,request,render_template,send_from_directory,jsonify
 import utilities.languageProcessing as lp
 import ssl
+import json
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -31,11 +32,38 @@ def flask_test():
 
 	return lp.final_words_dict;
 
-# serve sigml files for animation
 @app.route('/static/<path:path>')
 def serve_signfiles(path):
 	return send_from_directory('static',path)
 
+@app.route('/parser', methods=['GET', 'POST'])
+def parseit():
+    if request.method == "POST":
+        input_string = request.form['text']
+    else:
+        input_string = request.args.get('speech')
+    input_string = input_string.capitalize()
+    isl_parsed_token_list = lp.convert_eng_to_isl(input_string)
+
+    # lemmatize tokens
+    lemmatized_isl_token_list = lp.lemmatize_tokens(isl_parsed_token_list)
+
+    # remove stop words
+    filtered_isl_token_list = lp.filter_stop_words(lemmatized_isl_token_list)
+
+    isl_text_string = ""
+
+    for token in filtered_isl_token_list:
+        isl_text_string += token
+        isl_text_string += " "
+
+    isl_text_string = isl_text_string.lower()
+
+    data = {
+        'isl_text_string': isl_text_string,
+        'pre_process_string': lp.pre_process(isl_text_string)
+    }
+    return json.dumps(data)
 
 if __name__=="__main__":
 	app.run(debug=True)

@@ -3,19 +3,21 @@
 This project is a part of my Thesis, where several research work and implementations are done on Sign language Recognition and Translation (Citations are given) and demo application is made on text to Sign language conversion.
 
 # Installation
-This project needs flask and python to run.
+**Required python version: 3.7 or above**
+
+Clone the repository in local 
 
 ```sh
 pip install -r requirements.txt
-pip install spacy
-python main.py
+python app.py
 ```
-After running ```main.py``` stanford parser will be downloaded 
-you may run into some errors related to classpath of java, google them they shouldn't be so hard to fix 
+
+After running ```app.py``` stanford parser will be downloaded
 Open the browser and go to http://127.0.0.1:5000/  and see the project in action.
 
-## NOTE
-The project uses SIGML files for animating the words and they may not be accurate as making SIGML through HamNoSys is a long and tedious task and whoever made the sigml files which this project uses may not be accurate. 
+## Disclaimer
+This project uses SiGML files which is used to play 3D avatar. These SiGML files are pre-generated and might not be accurate in some aspects.
 
 ## Credits
 SIGML player: - https://vh.cmp.uea.ac.uk/index.php/CWA_Signing_Avatars
+Sign Language Translation (Translation folder): https://github.com/neccam/slt
