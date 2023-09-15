@@ -22,4 +22,5 @@ This project uses SiGML files which is used to play 3D avatar. These SiGML files
 
 ## Credits
 SIGML player: - https://vh.cmp.uea.ac.uk/index.php/CWA_Signing_Avatars
+
 Sign Language Translation (Translation folder): https://github.com/neccam/slt
